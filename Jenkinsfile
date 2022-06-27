@@ -1,8 +1,8 @@
 pipeline{
     agent any 
     environment{
-        VERSION = "${env.BUILD_ID}"
-    }
+	    GitCred = credentials('GitHub_cred')
+         }
     stages{
         stage("sonar quality check"){
             agent {
